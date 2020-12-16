@@ -28,7 +28,7 @@ class RouteController extends BaseController
 
 			if (!$this->routes) throw new RouteException('Отсутствуют маршруты в базовых настройках', 1);
 
-			$url = explode('/', substr($address_str, strlen(PATH) - 1));
+			$url = explode('/', substr($address_str, strlen(PATH)));
 
 
 			if ($url[0] && $url[0] === $this->routes['admin']['alias']){
