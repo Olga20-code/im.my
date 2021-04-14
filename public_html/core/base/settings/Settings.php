@@ -12,7 +12,7 @@ class Settings
 	private $routes = [
 		'admin' => [
 			'alias' => 'admin',
-			'path' => 'core/admin/controller',
+			'path' => 'core/admin/controller/',
 			'hrUrl' => false,
 			'routes' => [
 
@@ -43,10 +43,15 @@ class Settings
 		],
 	];
 
+	//контроллер показа данных из таблиц
+	private $defaultTable = 'teachers';
+
 	private $templateArr = [
 		'text' => ['name', 'phone', 'address'],
 		'textarea' => ['content', 'keywords'],
 	];
+
+	private $expansion = 'core/admin/expansion/';
 
 	static public function get($property) {
 		return self::instance()->$property;

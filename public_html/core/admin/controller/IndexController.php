@@ -1,17 +1,17 @@
 <?php
 
-/*
- *
- * разобраться почему IDE видит не правильный путь подключения файла
- *
- * */
 namespace core\admin\controller;
 
 use core\base\controller\BaseController;
+use core\admin\model\Model;
+use core\base\settings\Settings;
 
 class IndexController extends BaseController
 {
 	protected function inputData() {
-		exit('I am admin panel');
+
+		$redirect = PATH. Settings::get('routes')['admin']['alias'] . '/show';
+		$this->redirect($redirect);
+
 	}
 }
